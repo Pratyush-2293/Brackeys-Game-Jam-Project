@@ -3,7 +3,9 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - LeftJump
+  - RightJump
   layers:
   - Default
   - TransparentFX
@@ -11,7 +13,7 @@ TagManager:
   - 
   - Water
   - UI
-  - 
+  - SolidObjects
   - 
   - 
   - 
@@ -38,6 +40,18 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Background
+    uniqueID: 2727011775
+    locked: 0
+  - name: BehindTerrain
+    uniqueID: 1662917579
+    locked: 0
+  - name: Terrain
+    uniqueID: 3038029437
+    locked: 0
+  - name: Characters
+    uniqueID: 3633160323
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
