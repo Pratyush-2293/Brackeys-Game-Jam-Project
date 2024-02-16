@@ -13,7 +13,7 @@ public class PlayerControls : MonoBehaviour
         float horizontalInput = 0f;
         float verticalInput = 0f;
 
-        if (Input.GetKey(KeyCode.W)) // Move up
+        if (Input.GetKey(KeyCode.Space)) // Move up
         {
             verticalInput = 1f;
         }
@@ -52,5 +52,7 @@ public class PlayerControls : MonoBehaviour
         {
             SceneManager.LoadScene("JumpRight");
         }
+
     }
+
 }

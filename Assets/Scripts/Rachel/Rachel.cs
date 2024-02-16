@@ -13,7 +13,7 @@ public class Rachel : MonoBehaviour
     public GameObject contButton;
     public float wordSpeed;
     public bool playerIsClose;
-
+    public GameObject talkPrompt = null;
 
 
     // Update is called once per frame
@@ -77,12 +77,24 @@ public class Rachel : MonoBehaviour
         }
     }
 
+    private void OnTriggerStay2D(Collider2D other)
+    {
+        if (other.CompareTag("Player")){
+            talkPrompt.SetActive(true);
+        }
+    }
+
     private void OnTriggerExit2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
         {
             playerIsClose = false;
             zeroText();
+        }
+
+        if (other.CompareTag("Player"))
+        {
+            talkPrompt.SetActive(false);
         }
     }
 }

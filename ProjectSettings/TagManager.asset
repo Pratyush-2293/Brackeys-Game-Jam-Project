@@ -6,6 +6,8 @@ TagManager:
   tags:
   - LeftJump
   - RightJump
+  - TalkableNPC
+  - Door
   layers:
   - Default
   - TransparentFX
