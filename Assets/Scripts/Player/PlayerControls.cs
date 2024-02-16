@@ -9,12 +9,14 @@ public class PlayerControls : MonoBehaviour
     public float jumpStrength = 5f;
     private Rigidbody2D charBody;
     private BoxCollider2D charCollider;
+    private SpriteRenderer spriteRenderer; // Add this line
     [SerializeField] private LayerMask jumpableGround;
 
     private void Start()
     {
         charBody = GetComponent<Rigidbody2D>();
         charCollider = GetComponent<BoxCollider2D>();
+        spriteRenderer = GetComponent<SpriteRenderer>(); // Add this line
     }
 
     void Update()
@@ -23,11 +25,20 @@ public class PlayerControls : MonoBehaviour
         float dirX = Input.GetAxisRaw("Horizontal");
         charBody.velocity = new Vector2(dirX * moveSpeed, charBody.velocity.y);
 
+        // Flip the sprite based on direction
+        if (dirX < 0)
+        {
+            spriteRenderer.flipX = true;
+        }
+        else if (dirX > 0)
+        {
+            spriteRenderer.flipX = false;
+        }
+
         if (Input.GetButtonDown("Jump") && isGrounded())
         {
             charBody.velocity = new Vector2(charBody.velocity.x, jumpStrength);
         }
-
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
