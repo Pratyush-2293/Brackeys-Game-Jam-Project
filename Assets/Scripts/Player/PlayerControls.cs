@@ -6,36 +6,28 @@ using UnityEngine.SceneManagement;
 public class PlayerControls : MonoBehaviour
 {
     public float moveSpeed = 5f;
-    
+    public float jumpStrength = 5f;
+    private Rigidbody2D charBody;
+    private BoxCollider2D charCollider;
+    [SerializeField] private LayerMask jumpableGround;
+
+    private void Start()
+    {
+        charBody = GetComponent<Rigidbody2D>();
+        charCollider = GetComponent<BoxCollider2D>();
+    }
+
     void Update()
     {
         // Get input from the player
-        float horizontalInput = 0f;
-        float verticalInput = 0f;
+        float dirX = Input.GetAxisRaw("Horizontal");
+        charBody.velocity = new Vector2(dirX * moveSpeed, charBody.velocity.y);
 
-        if (Input.GetKey(KeyCode.Space)) // Move up
+        if (Input.GetButtonDown("Jump") && isGrounded())
         {
-            verticalInput = 1f;
-        }
-        else if (Input.GetKey(KeyCode.S)) // Move down
-        {
-            verticalInput = -1f;
+            charBody.velocity = new Vector2(charBody.velocity.x, jumpStrength);
         }
 
-        if (Input.GetKey(KeyCode.D)) // Move right
-        {
-            horizontalInput = 1f;
-        }
-        else if (Input.GetKey(KeyCode.A)) // Move left
-        {
-            horizontalInput = -1f;
-        }
-
-        // Calculate the movement direction
-        Vector2 movement = new Vector2(horizontalInput, verticalInput) * moveSpeed * Time.deltaTime;
-
-        // Move the player
-        transform.Translate(movement);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -55,4 +47,8 @@ public class PlayerControls : MonoBehaviour
 
     }
 
+    private bool isGrounded()
+    {
+        return Physics2D.BoxCast(charCollider.bounds.center, charCollider.bounds.size, 0f, Vector2.down, .1f, jumpableGround);
+    }
 }
