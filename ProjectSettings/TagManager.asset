@@ -51,6 +51,9 @@ TagManager:
   - name: Terrain
     uniqueID: 3038029437
     locked: 0
+  - name: Grass
+    uniqueID: 1973385043
+    locked: 0
   - name: Characters
     uniqueID: 3633160323
     locked: 0
