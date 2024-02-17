@@ -1,7 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine;
 
 public class PlayerControls : MonoBehaviour
 {
@@ -11,16 +9,20 @@ public class PlayerControls : MonoBehaviour
     public float health = 100f;
     private Rigidbody2D charBody;
     private BoxCollider2D charCollider;
-    private SpriteRenderer spriteRenderer; // Add this line
+    private SpriteRenderer spriteRenderer;
     [SerializeField] private LayerMask jumpableGround;
     // private bool facingLeft = false; // used in knockback logic
+
+    public int maxHealth = 100;
 
     private void Start()
     {
         charBody = GetComponent<Rigidbody2D>();
         charCollider = GetComponent<BoxCollider2D>();
-        spriteRenderer = GetComponent<SpriteRenderer>(); // Add this line
+        spriteRenderer = GetComponent<SpriteRenderer>(); 
     }
+
+
 
     void Update()
     {
@@ -65,6 +67,16 @@ public class PlayerControls : MonoBehaviour
         {
             TakeDamage();
         }
+    }
+
+    public void TakeDamage(int damage)
+    {
+        maxHealth -= damage;
+    }
+
+    private void Die()
+    {
+        Destroy(gameObject);
     }
 
     private bool isGrounded()
