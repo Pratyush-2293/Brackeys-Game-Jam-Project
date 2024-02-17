@@ -602,7 +602,7 @@ GameObject:
   - component: {fileID: 437476685}
   - component: {fileID: 437476684}
   m_Layer: 0
-  m_Name: Enemy (2)
+  m_Name: Mushroom3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -621,8 +621,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 2
-  patrolRange: 1
-  followRange: 1
+  patrolRange: 3
+  followRange: 5
   health: 100
 --- !u!61 &437476685
 BoxCollider2D:
@@ -695,7 +695,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!212 &437476687
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -777,7 +777,7 @@ GameObject:
   - component: {fileID: 452078245}
   - component: {fileID: 452078244}
   m_Layer: 0
-  m_Name: Enemy (3)
+  m_Name: Mushroom4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -870,7 +870,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!212 &452078247
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -12538,7 +12538,7 @@ GameObject:
   - component: {fileID: 1185264595}
   - component: {fileID: 1185264594}
   m_Layer: 0
-  m_Name: Enemy (1)
+  m_Name: Mushroom2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12557,8 +12557,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 2
-  patrolRange: 1
-  followRange: 1
+  patrolRange: 4
+  followRange: 5
   health: 100
 --- !u!61 &1185264595
 BoxCollider2D:
@@ -12631,7 +12631,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!212 &1185264597
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -13491,7 +13491,7 @@ GameObject:
   - component: {fileID: 1527836497}
   - component: {fileID: 1527836496}
   m_Layer: 0
-  m_Name: Enemy (5)
+  m_Name: Mushroom6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13510,8 +13510,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 2
-  patrolRange: 1
-  followRange: 1
+  patrolRange: 2
+  followRange: 4
   health: 100
 --- !u!61 &1527836497
 BoxCollider2D:
@@ -13584,7 +13584,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!212 &1527836499
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -14213,7 +14213,7 @@ GameObject:
   - component: {fileID: 1905694183}
   - component: {fileID: 1905694182}
   m_Layer: 0
-  m_Name: Enemy (4)
+  m_Name: Mushroom5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14232,8 +14232,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 2
-  patrolRange: 1
-  followRange: 1
+  patrolRange: 2
+  followRange: 4
   health: 100
 --- !u!61 &1905694183
 BoxCollider2D:
@@ -14306,7 +14306,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!212 &1905694185
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -14472,7 +14472,7 @@ GameObject:
   - component: {fileID: 2040243296}
   - component: {fileID: 2040243295}
   m_Layer: 0
-  m_Name: Enemy
+  m_Name: Mushroom1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14491,8 +14491,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 2
-  patrolRange: 1
-  followRange: 1
+  patrolRange: 2
+  followRange: 5
   health: 100
 --- !u!61 &2040243296
 BoxCollider2D:
@@ -14565,7 +14565,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!212 &2040243298
 SpriteRenderer:
   m_ObjectHideFlags: 0
