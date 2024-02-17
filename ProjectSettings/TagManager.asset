@@ -8,6 +8,7 @@ TagManager:
   - RightJump
   - TalkableNPC
   - Door
+  - MushroomDamage
   layers:
   - Default
   - TransparentFX
