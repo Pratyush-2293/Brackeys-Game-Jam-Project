@@ -9,6 +9,7 @@ TagManager:
   - TalkableNPC
   - Door
   - MushroomDamage
+  - Enemy
   layers:
   - Default
   - TransparentFX

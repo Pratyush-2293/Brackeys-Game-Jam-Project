@@ -20,6 +20,7 @@ public class EnemyMovement : MonoBehaviour
             transform.position = Vector2.MoveTowards(transform.position, player.position, moveSpeed * Time.deltaTime);
         }
     }
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
@@ -29,8 +30,12 @@ public class EnemyMovement : MonoBehaviour
             {
                 playerControls.TakeDamage(damage);
             }
+            Destroy(gameObject); // Destroy the enemy game object on impact with the player
         }
     }
 
-
+    private void OnMouseDown()
+    {
+        Destroy(gameObject); // Destroy the enemy game object when clicked
+    }
 }
