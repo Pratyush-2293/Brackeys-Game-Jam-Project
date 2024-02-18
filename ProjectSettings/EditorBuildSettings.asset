@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: 81648cde37b420749a8998e7d49a4e9f
+  - enabled: 1
     path: Assets/Scenes/MainScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
@@ -14,4 +17,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/JumpRight.unity
     guid: c49c9320406688446a0dedc3cbb88c55
+  - enabled: 1
+    path: Assets/Scenes/BulletHellScene.unity
+    guid: 59216385d5df8b644a93269976a59698
+  - enabled: 1
+    path: Assets/Scenes/PlatformerScene.unity
+    guid: 3f82c5b88a134b04b8795ca90405088b
   m_configObjects: {}
