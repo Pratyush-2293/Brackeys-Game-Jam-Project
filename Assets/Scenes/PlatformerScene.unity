@@ -674,7 +674,7 @@ Transform:
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 5, z: -25}
+  m_LocalPosition: {x: 1.5, y: 4.02, z: -25}
   m_LocalScale: {x: 2.5, y: 2.5, z: 2.5}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2757,6 +2757,37 @@ Transform:
   - {fileID: 653700287}
   - {fileID: 1515857319}
   m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &689051598
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 689051599}
+  m_Layer: 0
+  m_Name: AttackPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &689051599
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 689051598}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.98, y: -0.06, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1574137101}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &724530995
 GameObject:
@@ -13098,6 +13129,7 @@ GameObject:
   - component: {fileID: 1574137099}
   - component: {fileID: 1574137098}
   - component: {fileID: 1574137102}
+  - component: {fileID: 1574137103}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -13137,18 +13169,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.012518033, y: -0.21273267}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 3, y: 3}
+    oldSize: {x: 3.125, y: 2.3125}
     newSize: {x: 1, y: 2}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 2}
+  m_Size: {x: 0.709479, y: 1.8501189}
   m_EdgeRadius: 0
 --- !u!50 &1574137099
 Rigidbody2D:
@@ -13218,7 +13250,7 @@ SpriteRenderer:
   m_SortingLayerID: -661806973
   m_SortingLayer: -1
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 766ad0620dbd12742a07cd26beb46744, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 1836346b3085c4740bbbd1ce4cc9cd14, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -13238,11 +13270,12 @@ Transform:
   m_GameObject: {fileID: 1574137097}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -8.48, y: 5.02, z: 0}
-  m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
+  m_LocalPosition: {x: -8.48, y: 4.72, z: 0}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 519420032}
+  - {fileID: 689051599}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1574137102
@@ -13259,10 +13292,36 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 4
   jumpStrength: 9.5
+  attackStrength: 20
   health: 100
   jumpableGround:
     serializedVersion: 2
     m_Bits: 64
+  attackRate: 2
+  damageWavePrefab: {fileID: 2868382251299675212, guid: 187220fc2d64c564c9fcdecc68779380, type: 3}
+  damageWaveSpeed: 2.4
+  facingLeft: 0
+--- !u!95 &1574137103
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1574137097}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 3f26aa3bcac75214387e5064c296976f, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1622546103
 GameObject:
   m_ObjectHideFlags: 0
@@ -13635,6 +13694,18 @@ PrefabInstance:
     - target: {fileID: 6099627277728829538, guid: 66113f75fcf832c45b61c973d79595a6, type: 3}
       propertyPath: m_Name
       value: Mushroom
+      objectReference: {fileID: 0}
+    - target: {fileID: 6099627277728829538, guid: 66113f75fcf832c45b61c973d79595a6, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6172387139988324601, guid: 66113f75fcf832c45b61c973d79595a6, type: 3}
+      propertyPath: m_Size.x
+      value: 1.5197341
+      objectReference: {fileID: 0}
+    - target: {fileID: 6172387139988324601, guid: 66113f75fcf832c45b61c973d79595a6, type: 3}
+      propertyPath: m_Offset.x
+      value: 0.00075888634
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

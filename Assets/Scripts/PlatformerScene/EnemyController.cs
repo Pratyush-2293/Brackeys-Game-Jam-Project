@@ -1,7 +1,7 @@
 using System.Collections;
 using UnityEngine;
 
-public class FlyingEnemyController : MonoBehaviour
+public class EnemyController : MonoBehaviour
 {
     public float moveSpeed = 2f; // Speed at which the enemy moves
     public float patrolRange = 5f; // Distance the enemy patrols
@@ -140,5 +140,13 @@ public class FlyingEnemyController : MonoBehaviour
     {
         // Handle death
         Destroy(gameObject);
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("PlayerDamage"))
+        {
+            TakeDamage(25f);
+        }
     }
 }
