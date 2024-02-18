@@ -1,6 +1,7 @@
 using UnityEngine.SceneManagement;
 using UnityEngine;
 using System.Collections;
+using JetBrains.Annotations;
 
 public class PlayerControls : MonoBehaviour
 {
@@ -96,6 +97,14 @@ public class PlayerControls : MonoBehaviour
         }
     }
 
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("HostileEnvironment"))
+        {
+            TakeDamage(30f);
+        }
+    }
+
     public void TakeDamage(float damage)
     {
         charAnim.SetTrigger("hurt");
@@ -120,7 +129,21 @@ public class PlayerControls : MonoBehaviour
     void Attack(int dir)
     {
         //play attack animation
-        charAnim.SetTrigger("attack1");
+        float randNum = 0f;
+        randNum = Random.Range(1, 4);
+        if(randNum == 1)
+        {
+            charAnim.SetTrigger("attack1");
+        }
+        else if (randNum == 2)
+        {
+            charAnim.SetTrigger("attack2");
+        }
+        else
+        {
+            charAnim.SetTrigger("attack3");
+        }
+        
 
         // Launch Damage Wave
         GameObject damageWave = Instantiate(damageWavePrefab, transform.position, Quaternion.identity);
