@@ -118,6 +118,12 @@ public class PlayerControls : MonoBehaviour
     private void Die()
     {
         charAnim.SetTrigger("die");
+        Invoke("LoadGameOver", 1.5f);
+    }
+
+    private void LoadGameOver()
+    {
+        SceneManager.LoadScene("GameOver");
     }
 
     private bool isGrounded()
